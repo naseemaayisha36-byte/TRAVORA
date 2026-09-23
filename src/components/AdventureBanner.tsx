@@ -10,7 +10,13 @@ export function AdventureBanner({ onShopBags }: AdventureBannerProps) {
       {/* Cinematic Full-Width Mountain Backdrop */}
       <div className="absolute inset-0 z-0">
         <img
-          src="/src/assets/images/adventure_banner_1790141551380.jpg"
+          src="/images/adventure_banner.jpg"
+          onError={(e) => {
+            const target = e.currentTarget;
+            if (!target.src.includes('adventure_banner_1790141551380')) {
+              target.src = '/images/adventure_banner_1790141551380.jpg';
+            }
+          }}
           alt="Breathtaking mountain peaks travel horizon"
           className="w-full h-full object-cover object-center transform scale-100 hover:scale-105 transition-transform duration-1000 ease-out"
           referrerPolicy="no-referrer"

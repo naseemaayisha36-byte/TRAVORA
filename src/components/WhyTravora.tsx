@@ -29,7 +29,13 @@ export function WhyTravora({ onLearnMore, onExploreProducts }: WhyTravoraProps) 
           <div className="lg:col-span-6 relative">
             <div className="relative rounded-sm overflow-hidden border border-white/10 shadow-2xl shadow-black/80 aspect-[16/10] sm:aspect-[4/3] group">
               <img
-                src="/src/assets/images/why_travora_craft_1790141565331.jpg"
+                src="/images/why_travora.jpg"
+                onError={(e) => {
+                  const target = e.currentTarget;
+                  if (!target.src.includes('why_travora_craft_1790141565331')) {
+                    target.src = '/images/why_travora_craft_1790141565331.jpg';
+                  }
+                }}
                 alt="Travora travel gear in modern luxury transit lounge"
                 className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
                 referrerPolicy="no-referrer"

@@ -11,7 +11,14 @@ export function Hero({ onShopNow, onExploreCollection }: HeroProps) {
       {/* Background Image Container with Measured Luxury Scrim */}
       <div className="absolute inset-0 z-0">
         <img
-          src="/src/assets/images/hero_travel_luggage_1790141495883.jpg"
+          src="/images/hero.jpg"
+          onError={(e) => {
+            // Robust fallback if relative path is used
+            const target = e.currentTarget;
+            if (!target.src.includes('hero_travel_luggage')) {
+              target.src = '/images/hero_travel_luggage_1790141495883.jpg';
+            }
+          }}
           alt="TRAVORA luxury travel bags in scenic alpine destination"
           className="w-full h-full object-cover object-center transform scale-105 transition-transform duration-1000 ease-out"
           referrerPolicy="no-referrer"

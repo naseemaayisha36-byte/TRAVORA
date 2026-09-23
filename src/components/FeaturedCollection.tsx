@@ -104,6 +104,18 @@ export function FeaturedCollection({
                 <div className="relative aspect-[4/3] bg-[#1a1a1d] overflow-hidden">
                   <img
                     src={product.image}
+                    onError={(e) => {
+                      const target = e.currentTarget;
+                      if (product.id === 'travora-travel-backpack') {
+                        target.src = '/images/product_backpack_1790141507567.jpg';
+                      } else if (product.id === 'travora-adventure-duffle') {
+                        target.src = '/images/product_duffle_1790141518025.jpg';
+                      } else if (product.id === 'travora-carry-on') {
+                        target.src = '/images/product_carryon_1790141529193.jpg';
+                      } else if (product.id === 'travora-travel-organizer') {
+                        target.src = '/images/product_organizer_1790141539373.jpg';
+                      }
+                    }}
                     alt={product.name}
                     className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500 ease-out"
                     referrerPolicy="no-referrer"
