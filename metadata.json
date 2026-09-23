@@ -1,0 +1,6 @@
+{
+  "name": "TRAVORA — Travel Bags for Every Journey",
+  "description": "Premium, minimal, and adventurous travel luggage, backpacks, duffles, and accessories designed for journeys ahead.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
